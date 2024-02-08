@@ -11,36 +11,31 @@
 [![License](https://img.shields.io/badge/License-MIT-blue)](https://github.com/rezashabrang/hezar-api/blob/master/LICENSE)
 ![Coverage Report](assets/images/coverage.svg)
 
-<b>Inference API Wrapper for Hezar.</b>
+<b>Inference API Wrapper for [Hezar](https://github.com/hezarai/hezar).</b>
 
 </div>
 
 ## Installation
 
-- You need [Docker](https://docs.docker.com/engine/install/) installed on your machine.
-- Login to [Github Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry).
+- You need [Docker](https://docs.docker.com/engine/install/)and [Docker Compose](https://docs.docker.com/compose/install/) installed on your machine.
+- Clone the project.
 
 ```bash
-docker login ghcr.io
+git clone git@github.com:rezashabrang/hezar-api.git
 ```
 
-- Pull the image
+- Build the image.
 
 ```bash
-docker pull ghcr.io/rezashabrang/hezar-api
+docker compose -f docker-compose-dev.yml build
 ```
 
 - Run the image
 
 ```bash
-docker run -p 8080:80 \
-    -e LOG_LEVEL=DEBUG \
-    -e DOMAIN=NLP \
-    -e MODEL_NAME=hezarai/bert-fa-sentiment-dksf \
-    ghcr.io/rezashabrang/hezar-api
-
+docker compose -f docker-compose-dev.yml up
 ```
 
-Change `MODEL_NAME` accordingly. Currently only `NLP` domain is supported.
+In the `.env.dev` file, change `MODEL_NAME` accordingly. Currently only `NLP` domain is supported.
 
-- Go to [localhost:8080](localhost:8080)
+- Go to [localhost:8080/docs](localhost:8080/docs)
