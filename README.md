@@ -45,3 +45,5 @@ docker compose -f docker-compose-dev.yml up
 In the `.env.dev` file, change `MODEL_NAME` accordingly. Currently only `NLP` domain is supported.
 
 - Go to [localhost:8080/docs](localhost:8080/docs)
+
+![Swagger UI](/assets/swagger.gif)
