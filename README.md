@@ -17,11 +17,17 @@
 
 ## Installation
 
-- You need [Docker](https://docs.docker.com/engine/install/)and [Docker Compose](https://docs.docker.com/compose/install/) installed on your machine.
+- You need [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) installed on your machine.
 - Clone the project.
 
 ```bash
 git clone git@github.com:rezashabrang/hezar-api.git
+```
+
+- Go into root directory.
+
+```bash
+cd hezar-api
 ```
 
 - Build the image.
