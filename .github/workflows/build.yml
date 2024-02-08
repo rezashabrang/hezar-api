@@ -38,6 +38,10 @@ jobs:
 
       - name: Build and push
         run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "/usr/local/share/boost"
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
           docker compose -f docker-compose-dev.yml build
           docker tag ${{ env.IMAGE_NAME }} ghcr.io/rezashabrang/${{ env.IMAGE_NAME }}:${GITHUB_REF##*/}
           docker push ghcr.io/rezashabrang/${{ env.IMAGE_NAME }}:${GITHUB_REF##*/}
