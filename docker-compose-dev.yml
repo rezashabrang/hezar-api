@@ -11,7 +11,7 @@ services:
       #   - http_proxy=http://10.0.11.10:8080
       #   - https_proxy=http://10.0.11.10:8080
     env_file:
-      - .env
+      - .env.dev
     ports:
       - 8080:80
     volumes:
